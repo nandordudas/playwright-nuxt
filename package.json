@@ -12,7 +12,7 @@
   },
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
+    "dev": "nuxt dev --dotenv .env.local",
     "generate": "nuxt generate",
     "lint:fix": "pnpm lint --fix",
     "lint": "eslint --cache --config .config/eslint.ts .",

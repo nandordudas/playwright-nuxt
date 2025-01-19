@@ -3,15 +3,17 @@
 ## Install dependencies
 
 > [!NOTE]
-> If you encounter issues during installation, try running the following command:
+> If you encounter issues during installation, try running the following commands:
 >
 > ```bash
+> # I'm using WSL with Ubuntu 24.10
 > pnpm exec playwright install
 > sudo pnpm exec playwright install-deps
 > ```
 
 ```bash
 pnpm install
+cp .env.example .env.local
 ```
 
 ## Usage
@@ -20,8 +22,9 @@ pnpm install
 pnpm dev
 ```
 
-> [!NOTE]
-> The app is running on `http://localhost:3000`
+---
+
+### Addendum
 
 <details>
 <summary>Mobile Screenshot</summary>
