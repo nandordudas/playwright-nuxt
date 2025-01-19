@@ -26,7 +26,7 @@ async function generatePdf(htmlContent: string) {
 
     const a = createElement('a')
     const url = createObjectURL(response._data as unknown as Blob)
-    const filename = contentDisposition.split('filename=')[1].replace(/"/g, '')
+    const filename = contentDisposition.split('filename=')[1]!.replace(/"/g, '')
 
     a.href = url
     a.download = filename
@@ -74,10 +74,28 @@ function htmlContent({ debug }: HTMLOptions) {
           outline-offset: -1px;
         }
 
+        @media print {
+          @page {
+            size: A4 landscape;
+            margin-top: 0.5cm;
+            margin-bottom: 0.75cm;
+            margin-left: 1.25cm;
+            margin-right: 1cm;
+          }
+        }
+
         body {
           font-family: "Poppins", serif;
           font-weight: 100;
           font-style: normal;
+        }
+
+        section {
+          page-break-after: always;
+        }
+
+        h1 {
+          page-break-before: always;
         }
 
         h1 {
@@ -95,6 +113,9 @@ function htmlContent({ debug }: HTMLOptions) {
       <img src="https://playwright.dev/img/playwright-logo.svg" alt="Playwright Logo">
       <br>
       <code>const url = window.URL.createObjectURL(response._data as unknown as Blob)</code>
+      <section>
+        <h1>Second page</h1>
+      </section>
     </body>
   </html>`
 }

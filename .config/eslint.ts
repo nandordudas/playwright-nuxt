@@ -1,30 +1,17 @@
 import antfu from '@antfu/eslint-config'
 
-const MAXIMUM_CODE_LINE_LENGTH = 120
-const MAXIMUM_CYCLOMATIC_COMPLEXITY = 5
-
 export default antfu()
   .override('antfu/stylistic/rules', {
     rules: {
       'curly': ['error', 'multi-or-nest', 'consistent'],
       'style/brace-style': ['error', 'stroustrup', { allowSingleLine: false }],
-      'style/max-len': ['error', {
-        code: MAXIMUM_CODE_LINE_LENGTH,
-        ignorePattern: '.*\\n.*',
-        ignoreComments: true,
-        ignoreUrls: true,
-      }],
-      'unicorn/numeric-separators-style': ['error', {
-        number: {
-          minimumDigits: 4,
-          groupLength: 3,
-        },
-      }],
+      'style/max-len': ['error', { code: 120, ignorePattern: '.*\\n.*', ignoreComments: true, ignoreUrls: true }],
+      'unicorn/numeric-separators-style': ['error', { number: { minimumDigits: 4, groupLength: 3 } }],
     },
   })
   .override('antfu/typescript/rules', {
     rules: {
-      'complexity': ['error', MAXIMUM_CYCLOMATIC_COMPLEXITY],
+      'complexity': ['error', 5],
       'no-restricted-syntax': ['error', 'DebuggerStatement', 'LabeledStatement', 'WithStatement'],
       'ts/max-params': ['error', { max: 3 }],
     },
