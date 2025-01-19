@@ -35,8 +35,6 @@ async function generatePdf(htmlContent: string) {
     revokeObjectURL(url)
     a.remove()
     resolve()
-
-    return promise
   }
   catch (error) {
     consola.error('Error generating PDF:', error)
