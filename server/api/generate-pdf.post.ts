@@ -6,8 +6,13 @@ export default defineEventHandler(async (event) => {
   try {
     const body = await readBody(event)
 
-    if (!body.html)
-      throw new Error('No HTML content provided')
+    // [INFO] No `valibot` for simplicity.
+    if (!body.html) {
+      throw createError({
+        statusCode: 400,
+        message: 'Missing "html" in request body',
+      })
+    }
 
     const executablePath = await chromium.executablePath()
 
@@ -16,8 +21,7 @@ export default defineEventHandler(async (event) => {
     const browser = await playwright.launch({
       args: chromium.args,
       executablePath,
-      // @ts-expect-error Type 'true | "shell"' is not assignable to type 'boolean | undefined'.
-      headless: chromium.headless,
+      headless: true,
     })
     const context = await browser.newContext()
 

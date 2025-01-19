@@ -29,6 +29,8 @@ pnpm dev
 ![Mobile Screenshot](<images/localhost_3000_(iPhone SE).png>)
 </details>
 
-[PDF Preview](images/661fca8b-3bb8-43ac-a36c-e685036a01ba.pdf)
+[PDF Preview](preview/6711116b-fadd-4c8f-b7fa-e5b986fc3dcd.pdf)
 
-[PDF Preview with CSS Debug](images/bd2e2c67-c012-4d44-b8eb-b5ac4ebf99bd.pdf)
+[PDF Preview with CSS Debug](preview/b5f9de1e-be7e-4b6c-92cc-86aa4be1c46f.pdf)
+
+[edrsf54tedhgbn PDF](preview/727828df-d643-4236-9f98-497fc04280fc.pdf)
