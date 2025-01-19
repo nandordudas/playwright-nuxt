@@ -23,6 +23,11 @@ pnpm dev
 > [!NOTE]
 > The app is running on `http://localhost:3000`
 
+<details>
+<summary>Mobile Screenshot</summary>
+
 ![Mobile Screenshot](<images/localhost_3000_(iPhone SE).png>)
+</details>
+
 [PDF Preview](images/661fca8b-3bb8-43ac-a36c-e685036a01ba.pdf)
 [PDF Preview with CSS Debug](images/bd2e2c67-c012-4d44-b8eb-b5ac4ebf99bd.pdf)
